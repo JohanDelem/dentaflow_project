@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 app = FastAPI(title="DentaFlow API")
+ 
 
 @app.get("/health")
 def health_check():

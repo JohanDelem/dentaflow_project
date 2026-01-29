@@ -27,7 +27,12 @@ jobs:
 
       - name: Lint backend (flake8)
         working-directory: backend
-        run: flake8 src tests
+        run: |
+          if [ -d tests ]; then
+            flake8 src tests
+          else
+            flake8 src
+          fi
 
       - name: Test backend (pytest + coverage)
         working-directory: backend
